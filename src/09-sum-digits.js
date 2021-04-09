@@ -21,7 +21,7 @@ function getSumOfDigits(n) {
   // }
   // return b;
 
-  console.log(n);
+  // console.log(n);
   const stringInputInArray = String(n).split('');
   const b = stringInputInArray.reduce((acc, el) => Number(acc) + Number(el));
   if (b > 9) {
