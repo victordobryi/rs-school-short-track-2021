@@ -10,6 +10,8 @@
  *
  */
 function deleteDigit(/* n */) {
+  // let arr = n.split('');
+  // let elemCount = arr.length;
   throw new Error('Not implemented');
 }
 
