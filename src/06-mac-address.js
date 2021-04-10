@@ -13,35 +13,35 @@
  *
  */
 function isMAC48Address(n) {
-  const arr = [
-    'A',
-    'B',
-    'C',
-    'D',
-    'E',
-    'F',
-    '0',
-    '1',
-    '2',
-    '3',
-    '4',
-    '5',
-    '6',
-    '7',
-    '8',
-    '9',
-  ];
+  // const arr = [
+  //   'A',
+  //   'B',
+  //   'C',
+  //   'D',
+  //   'E',
+  //   'F',
+  //   '0',
+  //   '1',
+  //   '2',
+  //   '3',
+  //   '4',
+  //   '5',
+  //   '6',
+  //   '7',
+  //   '8',
+  //   '9',
+  // ];
 
-  const inputArr = n.replace(/-/gi, '').split('');
+  // const inputArr = n.replace(/-/gi, '').split('');
 
-  for (let i = 0; i < inputArr.length; i++) {
-    if (arr.indexOf(inputArr[i]) === -1) {
-      return false;
-    }
-  }
-  return true;
+  // for (let i = 0; i < inputArr.length; i++) {
+  //   if (arr.indexOf(inputArr[i]) === -1) {
+  //     return false;
+  //   }
+  // }
+  // return true;
   // console.log(n);
-  // return /([A-F\d]-?)/g.test(n);
+  return /^([0-9A-Fa-f]{2}[:-]){5}([0-9A-Fa-f]{2})$/g.test(n);
 }
 
 module.exports = isMAC48Address;
