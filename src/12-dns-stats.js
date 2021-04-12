@@ -48,13 +48,13 @@ function getDNSStats(domains) {
         sum++;
         if (sum > 1) {
           const z = domains[i].replace(/.*[.]/, '.');
-          console.log(z, 'z');
+          // console.log(z, 'z');
           x = `${domains[i].replace(z, '')}`;
-          console.log(x, 'x');
+          // console.log(x, 'x');
           str += z;
-          console.log(str, 'str');
+          // console.log(str, 'str');
           arr.push(str);
-          console.log(arr, 'arr');
+          // console.log(arr, 'arr');
         } else {
           const z = domains[i].replace(/.*[.]/, '.');
           x = `${z}.${domains[i].replace(z, '')}`;
@@ -68,8 +68,8 @@ function getDNSStats(domains) {
     acc[el] = (acc[el] || 0) + 1;
     return acc;
   }, {});
-  console.log(obj, 'obj');
-  console.log('-------------------------------------------');
+  // console.log(obj, 'obj');
+  // console.log('-------------------------------------------');
   getDNSStats(x);
   return obj;
 }
