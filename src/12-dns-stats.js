@@ -20,15 +20,20 @@
  * }
  *
  */
-function getDNSStats(domains) {
+function getDNSStats(/* domains */) {
+  throw new Error('Not implemented');
+
   // const arr = [];
   // for (let i = 0; i < domains.length; i++) {
   //   const z = domains[i].replace(/.*[.]/, '.');
   //   const x = `${z}.${domains[i].replace(z, '')}`;
+  //   const y = `${z}.${domains[i].replace(x, '')}`;
+  //   console.log(domains[i], 'dom');
   //   console.log(z, 'z');
   //   console.log(x, 'x');
-  //   console.log(domains[i]);
+  //   console.log(y, 'y');
   //   arr.push(z);
+  //   arr.push(y);
   //   arr.push(x);
   // }
   // const obj = arr.reduce((acc, el) => {
@@ -36,42 +41,43 @@ function getDNSStats(domains) {
   //   return acc;
   // }, {});
   // console.log(obj);
+  // console.log('----------------------');
   // return obj;
-  const arr = [];
-  let str = '';
-  let x;
-  let sum = 0;
-  for (let i = 0; i < domains.length; i++) {
-    const splitArr = domains[i].split('');
-    for (let j = 0; j < splitArr.length; j++) {
-      if (splitArr[j] === '.') {
-        sum++;
-        if (sum > 1) {
-          const z = domains[i].replace(/.*[.]/, '.');
-          // console.log(z, 'z');
-          x = `${domains[i].replace(z, '')}`;
-          // console.log(x, 'x');
-          str += z;
-          // console.log(str, 'str');
-          arr.push(str);
-          // console.log(arr, 'arr');
-        } else {
-          const z = domains[i].replace(/.*[.]/, '.');
-          x = `${z}.${domains[i].replace(z, '')}`;
-          arr.push(z);
-          arr.push(x);
-        }
-      }
-    }
-  }
-  const obj = arr.reduce((acc, el) => {
-    acc[el] = (acc[el] || 0) + 1;
-    return acc;
-  }, {});
+  // const arr = [];
+  // let str = '';
+  // let x;
+  // let sum = 0;
+  // for (let i = 0; i < domains.length; i++) {
+  //   const splitArr = domains[i].split('');
+  //   for (let j = 0; j < splitArr.length; j++) {
+  //     if (splitArr[j] === '.') {
+  //       sum++;
+  //       if (sum > 1) {
+  //         const z = domains[i].replace(/.*[.]/, '.');
+  //         console.log(z, 'z');
+  //         x = `${domains[i].replace(z, '')}`;
+  //         console.log(x, 'x');
+  //         str += z;
+  //         console.log(str, 'str');
+  //         arr.push(str);
+  //         console.log(arr, 'arr');
+  //       } else {
+  //         const z = domains[i].replace(/.*[.]/, '.');
+  //         x = `${z}.${domains[i].replace(z, '')}`;
+  //         arr.push(z);
+  //         arr.push(x);
+  //       }
+  //     }
+  //   }
+  // }
+  // const obj = arr.reduce((acc, el) => {
+  //   acc[el] = (acc[el] || 0) + 1;
+  //   return acc;
+  // }, {});
   // console.log(obj, 'obj');
   // console.log('-------------------------------------------');
-  getDNSStats(x);
-  return obj;
+  // getDNSStats(x);
+  // return obj;
 }
 
 module.exports = getDNSStats;
