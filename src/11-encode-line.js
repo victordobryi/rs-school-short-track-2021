@@ -8,7 +8,7 @@
  * For aabbbc should return 2a3bc
  *
  */
-function encodeLine(/* str */) {
+function encodeLine(str) {
   // console.log(str);
   // const obj = str.split('').reduce((acc, el) => {
   //   acc[el] = (acc[el] || 0) + 1;
@@ -25,7 +25,19 @@ function encodeLine(/* str */) {
   // }
   // console.log(finishString);
   // return finishString;
-  throw new Error('Not implemented');
+  const splitStr = str.split('');
+  let sum = 0;
+  let finishStr = '';
+  for (let i = 0; i < splitStr.length; i++) {
+    if (splitStr[i] === splitStr[i + 1]) {
+      sum++;
+    } else {
+      sum++;
+      finishStr += sum + splitStr[i];
+      sum = 0;
+    }
+  }
+  return finishStr.replace(/1/g, '');
 }
 
 module.exports = encodeLine;
